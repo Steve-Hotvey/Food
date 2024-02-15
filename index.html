@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Food Court
+
+    <nav>
+        <img width="150" height="100" src="img/albion-logo.png" alt="">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#contact" onclick="showContactForm()">Contact</a></li>
+        </ul>
+        <button type="button" onclick="signIn()">Sign in</button>
+    </nav>
+
+    <div class="container">
+        <div class="contact-form" id="contactForm" style="display: none;">
+            <h2>Contact Form</h2>
+            <form>
+                <!-- Your contact form fields go here -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea><br>
+
+                <button type="button" onclick="hideContactForm()">Close</button>
+                <button type="submit" onclick="hideContactForm()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showContactForm() {
+            var contactForm = document.getElementById('contactForm');
+            contactForm.style.display = 'block';
+            contactForm.style.backgroundColor = 'white';
+            contactForm.style.height = '200px';
+            contactForm.style.width = "300px";
+            contactForm.style.color = 'black';
+            contactForm.style.padding = '20px';
+            contactForm.style.textAlign = 'center';
+        }
+
+        function hideContactForm() {
+            var contactForm = document.getElementById('contactForm');
+            contactForm.style.display = 'none';
+        }
+
+        function signIn() {
+            // Your sign-in logic goes here
+        }
+    </script>
+
 </body>
 </html>
